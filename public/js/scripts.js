@@ -128,7 +128,6 @@ const updateBill = () => {
 
 const buyNow = () => {
   event.preventDefault();  //to stop the form submitting	
-  let s = Number(pizzaSize.options[pizzaSize.selectedIndex].value);
   let n = Number(quantity.options[quantity.selectedIndex].value);
 
   if (document.getElementById("deliveryCost").checked) {
@@ -140,7 +139,7 @@ const buyNow = () => {
 
   let receiptData = {
     receiptID: Date.now(),
-    Pizza_size: pizzaSize.value,
+    Pizza_size: pizzaSize.options[pizzaSize.selectedIndex].text,
     Number_of_Pizza: n,
     Grand_Total: grandCost,
     Delivery: deliveryStatus
