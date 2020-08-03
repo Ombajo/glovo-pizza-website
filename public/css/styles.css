@@ -110,7 +110,7 @@ footer {
 /* GRIDDING */
 
 .grid-container {
-
+    width: 100%;
     font-family: 'Jua', Bahnschrift, sans-serif;
 }
 
