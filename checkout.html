@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Glovo Pizza | Website </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#D58E3C">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Links -->
+    <link rel="stylesheet" href="./public/css/styles.css">
+    <link rel="shortcut icon" href="./public/images/favicon.png" type="image/png" sizes="192x192">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html"> Gl<img src="./public/images/logo.png" id="logo-img">vo Pizza </a>
+    </header>
+    <div id="container">
+        <div id="checkout" class="">
+            <div class="grid-container">
+                <div class="select">
+                    <span>Size</span>
+                    <select name="pizzaSize" id="pizza-size" onclick="updateBill()">
+                        <option value="1">Small</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Large</option>
+                    </select>
+                </div>
+                <!-- THE TOPPINGS -->
+                <div class="crust-container">
+                    <div class="crust-head">ADD TOPPING</div>
+                    <div class="crust-body">
+                        <div class="topping" title="KES 130/=">
+                            <img src="public/images/thumbnails/Mushroom.png" alt="" srcset="">
+                            <span>MUSHROOM</span>
+                        </div>
+                        <div class="topping" title="KES 300/=">
+                            <img src="public/images/thumbnails/Onion.png" alt="" srcset="">
+                            <span>ONION</span>
+                        </div>
+                        <div class="topping" title="KES 500/=">
+                            <img src="public/images/thumbnails/Paneer.png" alt="" srcset="">
+                            <span>PANEER</span>
+                        </div>
+                        <div class="topping" title="KES 230/=">
+                            <img src="public/images/thumbnails/Paparika.png" alt="" srcset="">
+                            <span>PAPARIKA</span>
+                        </div>
+                        <div class="topping" title="KES 230/=">
+                            <img src="public/images/thumbnails/Jalapeno.png" alt="" srcset="">
+                            <span>JALAPENO</span>
+                        </div>
+                        <div class="topping" title="KES 670/=">
+                            <img src="public/images/thumbnails/Olives.png" alt="" srcset="">
+                            <span>GREEN OLIVES</span>
+                        </div>
+                        <div class="topping" title="KES 340/=">
+                            <img src="public/images/thumbnails/GoldenCorn.png" alt="" srcset="">
+                            <span>GOLDEN CORN</span>
+                        </div>
+                        <div class="topping" title="KES 450/=">
+                            <img src="public/images/thumbnails/Capsicum.png" alt="" srcset="">
+                            <span>CAPSICUM</span>
+                        </div>
+                        <div class="topping" title="KES 340/=">
+                            <img src="public/images/thumbnails/PeriPeriChicken.png" alt="" srcset="">
+                            <span>PERI PERI CHICKEN</span>
+                        </div>
+                        <div class="topping" title="KES 560/=">
+                            <img src="public/images/thumbnails/Barbeque.png" alt="" srcset="">
+                            <span>BARBEQUE</span>
+                        </div>
+                        <div class="topping" title="KES 230/=">
+                            <img src="public/images/thumbnails/ChickenSausage.png" alt="" srcset="">
+                            <span>SAUSAGE</span>
+                        </div>
+                        <div class="topping" title="KES 760/=">
+                            <img src="public/images/thumbnails/ChickenTikka.png" alt="" srcset="">
+                            <span>CHICKEN TIKKA</span>
+                        </div>
+                        <div class="topping" title="KES 230/=">
+                            <img src="public/images/thumbnails/GrilledChickenRasher.png" alt="" srcset="">
+                            <span>GRILLED CHICKEN RASHER</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- THE CRUSTS -->
+                <div class="crust-container">
+                    <div class="crust-head">CHOOSE YOUR CRUST</div>
+                    <div class="crust-body">
+                        <div class="crust selected-crust" title="KES 34/=">CLASSIC HAND TOSSED</div>
+                        <div class="crust" title="KES 230/=">CHEESE BURST</div>
+                        <div class="crust" title="KES 430/=">WHEAT THIN CRUST</div>
+                        <div class="crust" title="KES 340/=">FRESH PAN</div>
+                        <div class="crust" title="KES 430/=">NEW HAND TOSSED</div>
+                    </div>
+                </div>
+                <!-- THE MONEY 💲💲💲 -->
+                <div class="bill-container">
+                    <div class="bill-extras">
+                        <span>Quantity</span>
+                        <select name="quantity" id="quantity" onclick="updateBill()">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br>
+                        <label for="extra-cheese" class="cheese" title="KES 150/=">Extra Cheese
+                            <input type="checkbox" name="extra-cheese" id="extra-cheese" onclick="updateBill()">
+                            <span class="checkmark" title="KES 150/="></span>
+                        </label>
+                        <br>
+                        <label for="delivery" class="delivery" title="KES 200/=">Delivery
+                            <input type="checkbox" name="delivery-cost" id="deliveryCost" onclick="updateBill()">
+                            <span class="checkmark" title="KES 200/="></span>
+                        </label>
+                    </div>
+                    <div class="bill">
+                        <ul class="bill-list">
+                            <li>
+                                <span class="bill-label">Total:</span>
+                                <span class="bill-value" id="total-cost">KES 340</span>
+                            </li>
+                            <li>
+                                <span class="bill-label">Extra Toppings:</span>
+                                <span class="bill-value" id="toppings-cost">KES 0</span>
+                            </li>
+                            <li>
+                                <span class="bill-label">Extra Cheese:</span>
+                                <span class="bill-value" id="cheese-cost">KES 0</span>
+                            </li>
+                            <li>
+                                <span class="bill-label">GST:</span>
+                                <span class="bill-value" id="gst-cost">KES 0</span>
+                            </li>
+                            <li>
+                                <span class="bill-label">Delivery:</span>
+                                <span class="bill-value" id="delivery-cost">KES 0</span>
+                            </li>
+                            <li id="grand-total">
+                                <span class="bill-label">Grand Total:</span>
+                                <span class="bill-value" id="grand-cost">KES 340</span>
+                            </li>
+                        </ul>
+                        <div id="buy-now" onclick="buyNow()">
+                            <a><span>Checkout</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="icons" class="social-media icons">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-youtube"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-pinterest"></a>
+            <a href="#" class="fa fa-snapchat-ghost"></a>
+            <a href="#" class="fa fa-skype"></a>
+            <a href="#" class="fa fa-tumblr"></a>
+            <a href="#" class="fa fa-vine"></a>
+        </div>
+        <div class="copyright">
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script>
+            All rights reserved.
+        </div>
+    </footer>
+    <!-- JavaScript -->
+    <script src="./public/js/scripts.js"></script>
+</body>
+
+</html>
