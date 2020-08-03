@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Jua');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: cadetblue;
+    margin: 0;
+    background: #FFFCF0;
+    background-image: url(../images/background.png);
+    background-attachment: fixed;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+header a {
+    font-size: 96px;
+    height: 96px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: cadetblue;
+    position: relative;
+}
+
+header a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+#logo-img {
+    width: 56px;
+    transform: translateY(10px)
+}
+
+#container {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.carousel img {
+    width: 968px;
+    height: 480px;
+    border-radius: 30px;
+}
+
+#carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: gray;
+    text-align: center;
+    font-size: 24px;
+    height: 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    color: cadetblue;
+}
+
+#containerHeader button {
+    background: none;
+    border: transparent;
+    color: white;
+    font-size: 56px;
+    padding: 2px;
+}
+  
+.flex-container-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding: 10px;
+}
+  
+.full-screen{
+    color: white
+}
+  
+.hidden {
+    display: none;
+}
+
+/* GRIDDING */
+
+.grid-container {
+
+    font-family: 'Jua', Bahnschrift, sans-serif;
+}
+
+/* TOPPINGS AND CRUSTS */
+
+.crust-container {
+    margin: 12px;
+}
+
+.toppings-container, .crust-container {
+    margin-left: 0;
+    width: 360px;
+    border-radius: 2px 2px 0 0;
+    overflow: hidden;
+}
+
+.toppings-head, .crust-head {
+    background: cadetblue;
+    padding: 10px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+}
+
+.toppings-genres {
+    text-align: center;
+    display: flex;
+}
+
+.toppings-genre {
+    width: 50%;
+    padding: 5px;
+    background: #eee;
+    cursor: pointer;
+}
+
+.toppings-genre:hover {
+    background: #ccc;
+}
+
+.toppings-genre.active {
+    background: cadetblue;
+    color: #fff
+}
+
+.toppings-body {
+    position: relative;
+    height: calc(100% - 73px);
+}
+
+.toppings-body-non, .toppings-body-veg {
+    width: 100%;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    display: none;
+}
+
+.toppings-body>.active-genre {
+    display: block;
+}
+
+.topping {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.topping img {
+    width: 40px;
+}
+
+.topping {
+    margin-left: 5px;
+}
+
+.crust {
+    margin-left: 10px;
+    line-height: 2;
+    cursor: pointer;
+}
+
+.topping:hover, .crust:hover {
+    color: cadetblue;
+}
+
+.topping.on-the-pizza::after, .crust.selected-crust::after {
+    content: ' ✔️';
+    margin-left: 5px;
+}
+
+/* BILL */
+.bill {
+    margin-left: 0px;
+}
+
+.bill-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.bill-extras {
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.cheese {
+    margin-left: 50px;
+    cursor: pointer;
+    position: relative;
+}
+
+.cheese .checkmark {
+    position: absolute;
+    top: 0;
+    left: -30px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: #FFB97B;
+    transition: .5s ease-in-out;
+}
+
+.cheese .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    transition: .5s;
+}
+
+.cheese input:checked ~ .checkmark:after {
+    display: block;
+    animation: check .3s ease-in forwards;
+}
+
+.delivery {
+    margin-left: 50px;
+    cursor: pointer;
+    position: relative;
+}
+
+.delivery .checkmark {
+    position: absolute;
+    top: 0;
+    left: -30px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: #FFB97B;
+    transition: .5s ease-in-out;
+}
+
+.delivery .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    transition: .5s;
+}
+
+.delivery input:checked ~ .checkmark:after {
+    display: block;
+    animation: check .3s ease-in forwards;
+}
+
+@keyframes check {
+    from { transform: rotate(15deg) }
+    to { transform: rotate(45deg) }
+}
+
+.cheese .checkmark:after {
+	transition: 5s;
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 3px 0;
+    transition: transform .5s ease-in-out;
+}
+
+.delivery .checkmark:after {
+	transition: 5s;
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 3px 0;
+    transition: transform .5s ease-in-out;
+}
+
+.bill-extras input {
+    position: absolute;
+    opacity: 0;
+}
+
+select {
+    background: cadetblue;
+    width: 97%;
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'Jua'
+}
+
+.bill {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bill-list {
+    font-size: 1.2rem;
+    list-style: none;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    width: 40%;
+    margin-top: 20px;
+    padding: 10px 0;
+}
+
+.bill-list>li {
+    display: flex;
+    justify-content: space-between
+}
+
+.bill-list>li#grand-total {
+    padding-top: 5px;
+    border-top: 2px solid #ccc;
+}
+
+#buy-now {
+    padding: .5rem 1rem;
+    border-radius: 3px;
+    font-size: 1rem;
+    cursor: pointer;
+    background: cadetblue;
+    color: #fff;
+    transition: all .25s ease-in;
+    box-shadow: 0 0 30px #000a;
+}
+
+#buy-now:hover {
+    box-shadow: 0 0 10px #0009;
+    transform: scale(.98)
+}
+
+/*
+ * Media Queries
+ */
+@media screen and (max-width: 768px) {
+    header a {
+        font-size: 56px;
+        height: 72px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: cadetblue;
+        position: relative;
+    }
+    
+    header a:hover {
+        color: black;
+        text-decoration: none;
+    }
+    
+    #logo-img {
+        width: 36px;
+        transform: translateY(8px)
+    }
+    
+    #container {
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    
+    .carousel img {
+        width: 480px;
+        height: 480px;
+        border-radius: 30px;
+    }
+    
+    #carousel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+    }
+    
+    footer {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: gray;
+        text-align: center;
+        font-size: 18px;
+        height: 90px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .fa {
+        padding: 20px;
+        font-size: 30px;
+        width: 30px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50%;
+        color: cadetblue;
+    }
+
+    .grid-container {
+        margin: 0 auto;
+    }
+    .pizza-container {
+        grid-row: span 2;
+        margin-bottom: 10px;
+    }
+    .toppings-container {
+        grid-row: span 2;
+        width: 260px;
+    }
+    .crust-container {
+        grid-row: span 1;
+        width: 360px;
+        margin: 4px;
+    }
+    .bill-container {
+        margin-top: 20px;
+        grid-row: span 3;
+    }
+    .bill {
+        flex-direction: column;
+        align-items: center;
+    }
+    .bill-list {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    select {
+        width: 100%;
+        margin: 24px;
+    }
+}
